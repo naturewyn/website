@@ -1,0 +1,13 @@
+# robots.txt – NatureWyn Coffee
+# https://www.naturewyn.com
+
+User-agent: *
+Allow: /
+
+# Disallow any admin or private directories (none currently, future-proofing)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Sitemap location
+Sitemap: https://www.naturewyn.com/sitemap.xml
