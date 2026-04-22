@@ -61,7 +61,7 @@ body {
   inset: -15%;
   background-image:
     linear-gradient(160deg,rgba(13,11,9,.72) 0%,rgba(13,11,9,.28) 50%,rgba(13,11,9,.76) 100%),
-    url(../img/spot-bg-01.jpeg);
+    url(../img/coffee-bg.jfif);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -634,4 +634,11 @@ footer.container {
   .nw-nav-logo-circle { width:150px; height:150px; }
   .nw-nav-logo        { width:120px; height:120px; }
   .nw-nav-link { font-size:0.56rem; padding:4px 6px; }
+}
+
+@media (max-width: 768px) {
+  .nw-nav-logo-circle {
+    transform: scale(0.55);
+    transform-origin: left center;
+  }
 }
