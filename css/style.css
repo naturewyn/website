@@ -220,7 +220,6 @@ h1,h2,h3 {
 .nw-color-primary  { color: var(--gold); }
 .nw-color-secondary {
   color: var(--green-bright);
-  font-size: 1.35rem;
   font-weight: 400;
   line-height: 1.4;
 }
