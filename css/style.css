@@ -645,6 +645,60 @@ footer.container {
   .nw-nav-link { font-size:0.56rem; padding:4px 6px; }
 }
 
+/* ── ANDROID WIDE PHONE FIX (431px–500px: Galaxy S-series, Pixel 9, etc.) ──
+   These devices sit wider than iPhone 14 Pro Max (430px) but narrower than
+   576px, so they were getting tablet-scale styles. This block gives them
+   the same compact phone treatment as ≤576px. */
+@media (min-width: 431px) and (max-width: 500px) {
+  /* Nav logo — match the ≤576px shrink */
+  .nw-nav-logo-circle { width:180px; height:180px; transform:scale(0.55); transform-origin:left center; }
+  .nw-nav-logo        { width:145px; height:145px; }
+  .nw-nav-link        { font-size:0.6rem; padding:5px 7px; letter-spacing:0.03em; }
+
+  /* Hero nav */
+  .nw-hero-nav { padding:8px 10px; gap:4px; background:rgba(13,11,9,0.92); }
+
+  /* Fixed nav */
+  .nw-fixed-nav-inner { padding:6px 10px; }
+  .nw-fixed-nav .nw-nav-link { font-size:0.6rem; padding:5px 7px; letter-spacing:0.03em; }
+
+  /* Section 1 clip & arrow */
+  .nw-section-1 {
+    min-height:100vh;
+    -webkit-clip-path:polygon(0 0,100% 0,100% 94%,0 100%);
+    clip-path:polygon(0 0,100% 0,100% 94%,0 100%);
+  }
+  .nw-section-1 .nw-section-arrow--down { bottom:7%; }
+
+  /* Section 3 */
+  .nw-section-3 {
+    min-height:auto;
+    padding-top:130px; padding-bottom:130px;
+    -webkit-clip-path:polygon(0 6%,100% 0,100% 94%,0 100%);
+    clip-path:polygon(0 6%,100% 0,100% 94%,0 100%);
+  }
+  .nw-section-3 .nw-section-arrow--up   { top:10%; }
+  .nw-section-3 .nw-section-arrow--down { bottom:8%; }
+
+  /* Typography */
+  h2 { font-size:1.45rem; }
+
+  /* Images & layout */
+  .nw-bg-circle-white { border-radius:28px; width:100%; height:auto; padding:40px 30px; }
+  .nw-bg-circle-white img { max-width:200px; }
+  img.nw-circle-img { max-width:90%; width:90%; margin:0 auto; display:block; }
+  .nw-circle-img-container { margin-bottom:30px; text-align:center; }
+  .nw-text-container { max-width:100%; }
+  .nw-bg-circle-pad-2 { padding-left:30px; }
+
+  /* Buy now */
+  .nw-buynow-section { padding:60px 0; }
+  .nw-buynow-content { padding:0 16px; }
+
+  /* Mobile hero overlay */
+  .nw-mobile-hero-content { padding-bottom:80px; padding-top:170px; }
+}
+
 
 /* ── MOBILE HERO CONTENT ── */
 .nw-mobile-hero-content {
@@ -772,10 +826,22 @@ footer.container {
   }
 }
 
+/* Ensure Samsung-width (480px) mobile hero sub-text has room */
+@media (min-width: 431px) and (max-width: 500px) {
+  .nw-mobile-hero-sub { max-width: 360px; }
+  .nw-mobile-hero-title { font-size: clamp(2.6rem, 10vw, 3.4rem); }
+}
+
 
 @media (max-width: 768px) {
   .nw-nav-logo-circle {
     transform: scale(0.55);
     transform-origin: left center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nw-section-1 .nw-section-arrow--down {
+    display: none;
   }
 }
